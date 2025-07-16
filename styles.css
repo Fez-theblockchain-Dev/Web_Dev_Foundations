@@ -1,0 +1,31 @@
+.responsive-img {
+    max-width: 600px; /* or any value you prefer */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  .image-row img {
+    flex: 1 1 300px;
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      background-color: #634E99;
+      color: D3D3D3;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  

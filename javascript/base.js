@@ -1,0 +1,1 @@
+// let this javascript file serve as the DOM manipulation file for the client side user 
