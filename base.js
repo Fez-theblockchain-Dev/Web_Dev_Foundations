@@ -7,7 +7,7 @@ fetch(`${baseUrl}/home`, {
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify({ name: "FullName" }) // replace "yourName" as needed
+    body: JSON.stringify({ name: "FullName" }) // replace "FullName" as needed
 });
 
 let controller = new AbortController();
@@ -16,7 +16,7 @@ fetch(url, { signal: controller.signal })
   .catch(err => console.warn("Request timed out"));
 
 
-
+//creating variables for manipulating different HTML pages individually in the future
 const home = document.getElementById("home");
 const about = document.getElementById("about");
 const custom = document.getElementById("custom");
