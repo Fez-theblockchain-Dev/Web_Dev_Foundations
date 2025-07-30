@@ -130,6 +130,14 @@ footer {
 #subscribe-form button:hover {
   background-color: #b8b8b8;
 }
+.calendly-inline-widget{
+  margin-top: 20px;
+}
+.personal-training-photo img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
 
 main {
   margin-bottom: 120px; /* Add space for fixed footer */
