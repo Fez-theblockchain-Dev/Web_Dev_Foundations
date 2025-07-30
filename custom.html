@@ -1,3 +1,8 @@
+<!--
+Custom webpage for personalized training plans/packages.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +12,19 @@
 </head>
 <body>
     <nav>   
-        <a href="about.html">About</a>
-        <a href="custom.html">Custom</a>
+        <button style="font-size:25px" href="about.html">About</button>
+        <button style="font-size:25px" href="custom.html">Custom</button>
     </nav>
     <section class="personal-training">
         <h1>Custom Personal Training</h1>
         <p>Unlock your potential with personalized training plans tailored to your goals. Our certified trainers will guide you every step of the way.</p>
         <a href="about.html" class="btn primary">Get Started</a>
       </section>
-      </body>
+      <footer>
+        <form id="subscribe-form">
+            <label for="subscribe-email">Subscribe to our newsletter:</label>
+            <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </footer>
+</body>

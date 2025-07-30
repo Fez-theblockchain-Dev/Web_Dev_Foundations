@@ -1,3 +1,8 @@
+<!--
+Home webpage for the website.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="javascript/base.js">
 </head>
 <body>
     <nav>
         <a href="about.html">About</a>
         <a href="custom.html">Custom</a>
+        <a href="gallery.html">Gallery</a>
     </nav>
     <main>
 
@@ -20,5 +27,12 @@
                 <img src="Client2_GroupPilates.png" alt="Group Pilates" class="responsive-img">
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </main>
+    <footer>
+        <form id="subscribe-form">
+            <label for="subscribe-email">Subscribe to our newsletter:</label>
+            <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </footer>
 </body>
 </html>
