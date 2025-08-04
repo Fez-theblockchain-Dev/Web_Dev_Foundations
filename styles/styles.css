@@ -19,12 +19,68 @@ body {
   padding: 0;
 }
 
+/* Navigation styling */
+nav {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: #D3D3D3;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Main content styling */
+main {
+  margin-bottom: 120px; /* Add space for fixed footer */
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+main h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+main h3 {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #D3D3D3;
+}
+
+main p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
 .responsive-img {
     max-width: 600px; /* or any value you prefer */
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   .image-row {
@@ -37,6 +93,103 @@ body {
     flex: 1 1 300px;
     max-width: 100%;
   }
+
+/* Contact form styling */
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-side {
+  text-align: left;
+}
+
+.topic-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.input-box textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  outline: none;
+  border-color: #634e99;
+  box-shadow: 0 0 5px rgba(99, 78, 153, 0.3);
+}
+
+/* Button styling */
+button, .btn-lg {
+  padding: 12px 24px;
+  background-color: #D3D3D3;
+  color: #634e99;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn-lg:hover {
+  background-color: #b8b8b8;
+}
+
+/* Personal training section */
+.personal-training {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.personal-training-photo img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.online-store{
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: white;
+  margin: 20px 0;
+}
+
+.calendly-inline-widget{
+  margin-top: 20px;
+}
+
   @media (max-width: 600px) {
     body {
       flex-direction: column;
@@ -47,6 +200,30 @@ body {
       font-family: 'Arial', sans-serif;
       font-size: 12px;
       text-align: center;
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 10px;
+
+    }
+
+    nav a {
+      width: max-content;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2em;
+    }
+
+    main h3 {
+      font-size: 1em;
+    }
+
+    .contact-form {
+      margin: 10px;
+      padding: 20px;
     }
 
     #nav {
@@ -130,16 +307,3 @@ footer {
 #subscribe-form button:hover {
   background-color: #b8b8b8;
 }
-.calendly-inline-widget{
-  margin-top: 20px;
-}
-.personal-training-photo img{
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-main {
-  margin-bottom: 120px; /* Add space for fixed footer */
-}
-  
