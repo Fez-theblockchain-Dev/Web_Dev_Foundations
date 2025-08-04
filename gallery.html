@@ -1,5 +1,5 @@
 <!--
-Gallery slide show for the ABC Fitness website.
+Merchandise showcase for ABC Fitness - Slideshow gallery of gym apparel and accessories.
 -->
 
 <!DOCTYPE html>
@@ -7,22 +7,74 @@ Gallery slide show for the ABC Fitness website.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - ABC Fitness</title>
+    <title>ABC Fitness Merchandise</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="javascript/base.js" defer></script>
 </head>
 <body>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="custom.html">Customized workout plans</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="custom.html">Custom Training</a>
+        <a href="gallery.html">Merchandise</a>
     </nav>
     <main>
-        <h1>Your new fitness journey starts here!</h1>
-        <img src="assets/Client2_GroupPilates.png" alt="group pilates" class="responsive-img">
+        <h1>ABC Fitness Merchandise</h1>
+        <p class="merch-subtitle">Show your ABC Fitness pride with our premium apparel and accessories!</p>
         
-        <h1>Welcome, you belong here</h1>
-        <p class="online-store">Gear and Apparel</p>
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="assets/Client2_TeeShirt.png" alt="ABC Fitness T-Shirt" class="merch-img">
+                <div class="slide-content">
+                    <h2>ABC Fitness T-Shirt</h2>
+                    <p class="price">$24.99</p>
+                    <p class="description">Premium cotton t-shirt with our signature ABC Fitness logo. Perfect for workouts and casual wear.</p>
+                    <button class="buy-btn" onclick="addToCart('ABC Fitness T-Shirt', 24.99)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="assets/Client2_WaterBottle.png" alt="ABC Fitness Water Bottle" class="merch-img">
+                <div class="slide-content">
+                    <h2>ABC Fitness Water Bottle</h2>
+                    <p class="price">$19.99</p>
+                    <p class="description">Insulated stainless steel water bottle with ABC Fitness branding. Keep your drinks cold for hours!</p>
+                    <button class="buy-btn" onclick="addToCart('ABC Fitness Water Bottle', 19.99)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="assets/Client2_YogaMat.png" alt="ABC Fitness Yoga Mat" class="merch-img">
+                <div class="slide-content">
+                    <h2>ABC Fitness Yoga Mat</h2>
+                    <p class="price">$34.99</p>
+                    <p class="description">Premium non-slip yoga mat with ABC Fitness design. Perfect for yoga, pilates, and home workouts.</p>
+                    <button class="buy-btn" onclick="addToCart('ABC Fitness Yoga Mat', 34.99)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots/circles -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Shopping Cart -->
+        <div class="cart-container">
+            <h3>Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
     </main>
     <footer>
         <form id="subscribe-form">
