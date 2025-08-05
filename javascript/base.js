@@ -231,6 +231,19 @@ const checkout = () => {
     updateCartDisplay();
 };
 
+const clearCart = () => {
+    if (cart.length === 0) {
+        alert('Your cart is already empty!');
+        return;
+    }
+    
+    if (confirm('Are you sure you want to clear your cart?')) {
+        cart = [];
+        updateCartDisplay();
+        alert('Cart cleared successfully!');
+    }
+};
+
 // Single consolidated DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", () => {
     // Navigation event listeners - using querySelector to find navigation links
