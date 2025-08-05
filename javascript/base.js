@@ -1,7 +1,10 @@
 // DOM manipulation file for the client side user
 const nav = document.getElementById("nav");
 
-const baseUrl = "http://localhost:3000";
+// Use Netlify Functions URL when deployed, fallback to localhost for development
+const baseUrl = window.location.hostname === 'localhost' 
+  ? "http://localhost:3000" 
+  : "/.netlify/functions/api";
 
 // Fetch request with proper error handling
 const fetchHomeData = async () => {
@@ -141,7 +144,7 @@ let cart = [];
 
 const addToCart = (itemName, price) => {
     const existingItem = cart.find(item => item.name === itemName);
-    
+    // allows user to increment/decrement the item in the cart
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
