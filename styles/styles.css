@@ -39,7 +39,7 @@ body {
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  /* transition: background-color 0.2s ease, color 0.2s ease; */
+  transition: background-color 0.2s ease, color 0.2s ease;
   font-weight: bold;
   display: inline-block;
   position: relative;
