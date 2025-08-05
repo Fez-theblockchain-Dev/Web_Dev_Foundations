@@ -283,7 +283,7 @@ class NewsletterComponent {
             border-radius: 4px;
             font-weight: bold;
             text-align: center;
-            animation: slideIn 0.3s ease-out;
+            animation: newsletterSlideIn 0.3s ease-out;
         `;
 
         // Set background color based on message type
@@ -308,14 +308,12 @@ class NewsletterComponent {
             
             // Remove message after 5 seconds
             setTimeout(() => {
-                if (messageElement.parentNode) {
-                    messageElement.style.animation = 'slideOut 0.3s ease-out';
-                    setTimeout(() => {
-                        if (messageElement.parentNode) {
-                            messageElement.parentNode.removeChild(messageElement);
-                        }
-                    }, 300);
-                }
+                messageElement.style.animation = 'newsletterSlideOut 0.3s ease-out';
+                setTimeout(() => {
+                    if (messageElement.parentNode) {
+                        messageElement.parentNode.removeChild(messageElement);
+                    }
+                }, 300);
             }, 5000);
         }
     }

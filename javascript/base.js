@@ -35,44 +35,6 @@ const createTimeoutController = (timeoutMs = 3000) => {
     return controller;
 };
 
-// Navigation event listeners - using querySelector to find navigation links
-document.addEventListener('DOMContentLoaded', () => {
-    // Find navigation links by their href attributes
-    const homeLink = document.querySelector('a[href="home.html"]');
-    const aboutLink = document.querySelector('a[href="about.html"]');
-    const customLink = document.querySelector('a[href="custom.html"]');
-    const galleryLink = document.querySelector('a[href="gallery.html"]');
-
-    // Add click event listeners if links exist
-    if (homeLink) {
-        homeLink.addEventListener("click", (e) => {
-            // Allow default navigation behavior
-            console.log("Navigating to home page");
-        });
-    }
-
-    if (aboutLink) {
-        aboutLink.addEventListener("click", (e) => {
-            console.log("Navigating to about page");
-        });
-    }
-
-    if (customLink) {
-        customLink.addEventListener("click", (e) => {
-            console.log("Navigating to custom page");
-        });
-    }
-
-    if (galleryLink) {
-        galleryLink.addEventListener("click", (e) => {
-            console.log("Navigating to gallery page");
-        });
-    }
-});
-
-// Newsletter component is now handled by newsletter.js
-// The old subscribe form functionality has been replaced with a comprehensive newsletter component
-
 // Slideshow functionality for merchandise gallery
 let slideIndex = 1;
 let slideInterval;
@@ -237,9 +199,16 @@ const showCartNotification = (itemName) => {
     
     document.body.appendChild(notification);
     
+    // Trigger animation
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+        notification.style.opacity = '1';
+    }, 10);
+    
     // Remove notification after 3 seconds
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.5s ease-out';
+        notification.style.transform = 'translateX(100%)';
+        notification.style.opacity = '0';
         setTimeout(() => {
             if (notification.parentNode) {
                 notification.parentNode.removeChild(notification);
@@ -262,27 +231,46 @@ const checkout = () => {
     updateCartDisplay();
 };
 
-// Initialize when DOM is loaded
+// Single consolidated DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", () => {
+    // Navigation event listeners - using querySelector to find navigation links
+    const homeLink = document.querySelector('a[href="home.html"]');
+    const aboutLink = document.querySelector('a[href="about.html"]');
+    const customLink = document.querySelector('a[href="custom.html"]');
+    const galleryLink = document.querySelector('a[href="gallery.html"]');
+
+    // Add click event listeners if links exist
+    if (homeLink) {
+        homeLink.addEventListener("click", (e) => {
+            console.log("Navigating to home page");
+            // Allow default navigation behavior
+        });
+    }
+
+    if (aboutLink) {
+        aboutLink.addEventListener("click", (e) => {
+            console.log("Navigating to about page");
+            // Allow default navigation behavior
+        });
+    }
+
+    if (customLink) {
+        customLink.addEventListener("click", (e) => {
+            console.log("Navigating to custom page");
+            // Allow default navigation behavior
+        });
+    }
+
+    if (galleryLink) {
+        galleryLink.addEventListener("click", (e) => {
+            console.log("Navigating to gallery page");
+            // Allow default navigation behavior
+        });
+    }
+
+    // Initialize slideshow and fetch data
     initializeSlideshow();
     fetchHomeData();
-    
-    // Add CSS animations for cart notifications
-    if (!document.querySelector('#cart-notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'cart-notification-styles';
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
 });
 
 

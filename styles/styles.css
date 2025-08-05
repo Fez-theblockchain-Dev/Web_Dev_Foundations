@@ -39,15 +39,21 @@ body {
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  /* transition: background-color 0.2s ease, color 0.2s ease; */
   font-weight: bold;
   display: inline-block;
   position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
+}
+
+.nav a:active {
+  transform: translateY(1px);
 }
 
 /* Main content styling */
