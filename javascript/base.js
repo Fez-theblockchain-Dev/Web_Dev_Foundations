@@ -35,18 +35,40 @@ const createTimeoutController = (timeoutMs = 3000) => {
     return controller;
 };
 
-// DOM elements
-const home = document.getElementById("home");
-const about = document.getElementById("about");
-const custom = document.getElementById("custom");
-const gallery = document.getElementById("gallery");
+// Navigation event listeners - using querySelector to find navigation links
+document.addEventListener('DOMContentLoaded', () => {
+    // Find navigation links by their href attributes
+    const homeLink = document.querySelector('a[href="home.html"]');
+    const aboutLink = document.querySelector('a[href="about.html"]');
+    const customLink = document.querySelector('a[href="custom.html"]');
+    const galleryLink = document.querySelector('a[href="gallery.html"]');
 
-// Navigation event listeners
-if (home) {
-    home.addEventListener("click", () => {
-        window.location.href = `${baseUrl}/home`;
-    });
-}
+    // Add click event listeners if links exist
+    if (homeLink) {
+        homeLink.addEventListener("click", (e) => {
+            // Allow default navigation behavior
+            console.log("Navigating to home page");
+        });
+    }
+
+    if (aboutLink) {
+        aboutLink.addEventListener("click", (e) => {
+            console.log("Navigating to about page");
+        });
+    }
+
+    if (customLink) {
+        customLink.addEventListener("click", (e) => {
+            console.log("Navigating to custom page");
+        });
+    }
+
+    if (galleryLink) {
+        galleryLink.addEventListener("click", (e) => {
+            console.log("Navigating to gallery page");
+        });
+    }
+});
 
 // Newsletter component is now handled by newsletter.js
 // The old subscribe form functionality has been replaced with a comprehensive newsletter component

@@ -26,9 +26,13 @@ class NewsletterComponent {
      * Initialize the newsletter component
      */
     init() {
-        this.createNewsletterHTML();
-        this.attachEventListeners();
-        this.loadSubscribers();
+        try {
+            this.createNewsletterHTML();
+            this.attachEventListeners();
+            this.loadSubscribers();
+        } catch (error) {
+            console.error('Error displaying newsletter signup', error);
+        }
     }
 
     /**
@@ -63,7 +67,7 @@ class NewsletterComponent {
                         </div>
                         <div class="form-group">
                             <select id="newsletter-fitness-level" name="fitnessLevel" class="newsletter-input">
-                                <option value="">Select your fitness level</option>
+                                <option value="">Fitness Level</option>
                                 <option value="beginner">Beginner</option>
                                 <option value="intermediate">Intermediate</option>
                                 <option value="advanced">Advanced</option>
@@ -357,15 +361,19 @@ class NewsletterComponent {
 
 // Auto-initialize newsletter component when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the newsletter component
-    window.newsletterComponent = new NewsletterComponent({
-        title: 'Stay Fit with ABC Fitness!',
-        subtitle: 'Get exclusive workout tips, nutrition advice, and motivation delivered to your inbox.',
-        placeholder: 'Enter your email address',
-        buttonText: 'Subscribe Now',
-        successMessage: 'Welcome to the ABC Fitness family! Check your email for your first newsletter.',
-        errorMessage: 'Please enter a valid email address.'
-    });
+    try {
+        // Initialize the newsletter component
+        window.newsletterComponent = new NewsletterComponent({
+            title: 'Stay Fit with ABC Fitness!',
+            subtitle: 'Get exclusive workout tips, nutrition advice, and motivation delivered to your inbox.',
+            placeholder: 'Enter your email address',
+            buttonText: 'Subscribe Now',
+            successMessage: 'Welcome to the ABC Fitness family! Check your email to confirm subscription.',
+            errorMessage: 'Please enter a valid email address.'
+        });
+    } catch (error) {
+        console.error('Error initializing newsletter component:', error);
+    }
 });
 
 // Export for use in other modules
