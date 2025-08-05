@@ -147,9 +147,15 @@ class NewsletterComponent {
             source: window.location.pathname
         };
 
-        // Validate the data
+        // Validate the data (error handling)
         if (!this.validateSubscriberData(subscriberData)) {
+            this.showMessage('Invalid email format. Please enter a valid email address.', 'error');
             return;
+        } else { 
+            this.addSubscriber(subscriberData);
+            this.showMessage(this.options.successMessage, 'Thank you for subscribing to our newsletter!');
+            event.target.reset();
+            console.log('New newsletter subscription:', subscriberData);
         }
 
         // Add subscriber to the list
