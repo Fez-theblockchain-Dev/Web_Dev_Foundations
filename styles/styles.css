@@ -432,6 +432,8 @@ button:hover, .btn-lg:hover {
 
 .calendly-inline-widget{
   margin-top: 20px;
+  max-width: fit-content;
+  max-height: 60px;
 }
 
   /* Tablet styles */
@@ -575,8 +577,10 @@ footer {
   align-items: center;
   gap: 10px;
   max-width: 400px;
-  margin: 0 auto;
-  margin-bottom: 50px;
+  margin: 20px auto 40px auto;
+  top: -30px;
+  position: relative;
+
 }
 
 #subscribe-form label {
