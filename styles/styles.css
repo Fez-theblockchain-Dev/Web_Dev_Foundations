@@ -20,7 +20,7 @@ body {
 }
 
 /* Navigation styling */
-nav {
+.nav {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 8px;
@@ -31,7 +31,7 @@ nav {
   justify-content: center;
 }
 
-nav a {
+.nav a {
   color: #D3D3D3;
   text-decoration: none;
   padding: 8px 16px;
@@ -40,9 +40,10 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
+.nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
+  width: max-content;
 }
 
 /* Main content styling */
@@ -173,10 +174,15 @@ main p {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
+  z-index: 10;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .next {
@@ -431,15 +437,23 @@ button:hover, .btn-lg:hover {
       max-height: 100vh;
     }
 
-    nav {
+    .nav {
       flex-direction: column;
       gap: 10px;
+      width: max-content;
 
     }
 
-    nav a {
+    .nav a {
       width: max-content;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: max-content;
+
     }
 
     main h1 {
@@ -471,7 +485,7 @@ button:hover, .btn-lg:hover {
     
     #subscribe-form {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       gap: 8px;
       max-width: 350px;

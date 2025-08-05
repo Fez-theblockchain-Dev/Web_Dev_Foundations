@@ -9,14 +9,15 @@ Custom webpage for personalized training plans/packages.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Personal Training - ABC Fitness</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="javascript/newsletter.js" defer></script>
 </head>
 <body>
-    <nav>   
+    <div class="nav">   
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="custom.html">Custom</a>
         <a href="gallery.html">Gallery</a>
-    </nav>
+    </div>
     <section class="personal-training">
         <div class="personal-training-photo">
         <img src="assets/Client2_IndividualKickboxing.png" alt="Individual Kickboxing Training">
@@ -27,11 +28,7 @@ Custom webpage for personalized training plans/packages.
         <a href="about.html" class="btn-lg">Get Started</a>
     </section>
     <footer>
-        <form id="subscribe-form">
-            <label for="subscribe-email">Subscribe to our newsletter:</label>
-            <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
+        <!-- Newsletter component will be inserted here automatically to reduce redundant code -->
     </footer>
 </body>
 </html>

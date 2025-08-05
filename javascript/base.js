@@ -45,36 +45,8 @@ if (home) {
     });
 }
 
-// Subscribe form functionality with modern ES6+ practices
-const initializeSubscribeForm = () => {
-    const subscribeForm = document.getElementById("subscribe-form");
-    
-    if (!subscribeForm) {
-        console.warn("Subscribe form not found");
-        return;
-    }
-    
-    subscribeForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        
-        const emailInput = subscribeForm.querySelector('input[type="email"]');
-        const email = emailInput?.value?.trim();
-        
-        if (!email) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-        
-        // Display success message
-        alert("Thank you for subscribing!");
-        
-        // Reset the form
-        subscribeForm.reset();
-        
-        // Optional: Log the subscription
-        console.log("New subscription:", email);
-    });
-};
+// Newsletter component is now handled by newsletter.js
+// The old subscribe form functionality has been replaced with a comprehensive newsletter component
 
 // Slideshow functionality for merchandise gallery
 let slideIndex = 1;
@@ -267,7 +239,6 @@ const checkout = () => {
 
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    initializeSubscribeForm();
     initializeSlideshow();
     fetchHomeData();
     
