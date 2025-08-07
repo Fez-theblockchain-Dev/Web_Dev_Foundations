@@ -9,8 +9,12 @@ Home webpage for the website.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC Fitness - Home</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="javascript/base.js" defer></script>
     <script src="javascript/newsletter.js" defer></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="javascript/swiper.js" defer></script>
 </head>
 <body>
@@ -21,12 +25,27 @@ Home webpage for the website.
         <a href="gallery.html">Shop</a>
     </div>
     <main>
-        <h1>Change your life through the help of one of our certified, functional health, personal trainers</h1>
-        <img src="assets/Client2_GroupKickboxing.png" alt="Group Kickboxing" class="responsive-img">
-        <img src="assets/Client2_GroupYoga.png" alt="Group Yoga Class" class="responsive-img">
-       <div> 
-        <p style="font-size: 16px; font-weight: bold;">Book a free consultation with one of our trainers today!</p>
+        <div class="swiper">
+            <h3>Change your life through the help of one of our certified, functional health, personal trainers</h3>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/Client2_GroupKickboxing.png" alt="Group Kickboxing" class="responsive-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/Client2_GroupYoga.png" alt="Group Yoga Class" class="responsive-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/Client2_IndividualYoga.png" alt="Solo yoga stretch" class="responsive-img">
+                </div>
+            </div>
+            <!-- Add pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add navigation arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+        
+        <p style="font-size: 16px; font-weight: bold;">Book a free consultation with one of our trainers today!</p>
         <div style="max-width: 85vw" class="calendly-inline-widget" data-url="https://calendly.com/megalax18/30min"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </main>
