@@ -119,7 +119,7 @@ main p {
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .merch-img:hover {
@@ -162,7 +162,7 @@ main p {
   font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -355,10 +355,26 @@ main p {
 
 .swiper-pagination-bullet {
     background-color: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
     background-color: white;
+    transform: scale(1.2);
+}
+
+/* Ensure pagination container is visible */
+.swiper-pagination {
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    margin-top: 20px;
 }
 
 .swiper-button-next,

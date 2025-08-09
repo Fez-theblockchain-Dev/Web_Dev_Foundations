@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM loaded, initializing Swiper...");
     
     // Check if Swiper is available
-    if (typeof swiper === 'undefined') {
+    if (typeof Swiper === 'undefined') {
         console.error("Swiper is not loaded!");
         return;
     }
@@ -17,24 +17,43 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    console.log("Swiper container found, initializing...");
+    // Check if pagination element exists
+    const paginationElement = document.querySelector('.swiper-pagination');
+    if (!paginationElement) {
+        console.error("Swiper pagination element not found!");
+        return;
+    }
     
-    // Initialize Swiper
+    console.log("Swiper container found, initializing...");
+    console.log("Pagination element found:", paginationElement);
+    
+    // Initialize Swiper with explicit module imports
     const swiper = new Swiper('.swiper', {
-        modules: [Swiper.Navigation, Swiper.Pagination, Swiper.Autoplay],
+        // Enable all features we need
+        slidesPerView: 1,
+        spaceBetween: 30,
         loop: true,
+        
+        // Autoplay
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
         },
+        
+        // Pagination
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+            type: 'bullets',
+            dynamicBullets: false,
         },
+        
+        // Navigation
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        
         // Responsive breakpoints
         breakpoints: {
             640: {
@@ -50,5 +69,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     console.log("Swiper initialized successfully!");
+    console.log("Swiper instance:", swiper);
+    console.log("Pagination enabled:", swiper.pagination);
+    console.log("Navigation enabled:", swiper.navigation);
+    
+    // Test pagination functionality
+    setTimeout(() => {
+        console.log("Testing pagination...");
+        console.log("Total slides:", swiper.slides.length);
+        console.log("Current slide index:", swiper.activeIndex);
+        
+        // Test if pagination bullets are clickable
+        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+        console.log("Pagination bullets found:", bullets.length);
+        
+        bullets.forEach((bullet, index) => {
+            bullet.addEventListener('click', () => {
+                console.log(`Clicked bullet ${index}`);
+                swiper.slideTo(index);
+            });
+        });
+    }, 1000);
+    
+    // Add event listeners to track slide changes
+    swiper.on('slideChange', function () {
+        console.log('Slide changed to:', swiper.activeIndex);
+    });
+    
+    swiper.on('paginationRender', function () {
+        console.log('Pagination rendered');
+    });
 });
 
