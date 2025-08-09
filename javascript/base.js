@@ -40,6 +40,13 @@ let slideIndex = 1;
 let slideInterval;
 
 const initializeSlideshow = () => {
+    // Check if we're on a page with Swiper (like home.html)
+    const swiperContainer = document.querySelector('.swiper');
+    if (swiperContainer) {
+        console.log("Swiper detected, skipping traditional slideshow initialization");
+        return;
+    }
+    
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     

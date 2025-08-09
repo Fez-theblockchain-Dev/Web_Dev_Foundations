@@ -13,9 +13,8 @@ Home webpage for the website.
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="javascript/base.js" defer></script>
     <script src="javascript/newsletter.js" defer></script>
-    <!-- Swiper JS -->
+    <!-- Swiper JS - load before custom swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="javascript/swiper.js" defer></script>
 </head>
 <body>
     <div class="nav">
@@ -49,5 +48,8 @@ Home webpage for the website.
         <div style="max-width: 85vw" class="calendly-inline-widget" data-url="https://calendly.com/megalax18/30min"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </main>
+    
+    <!-- Load swiper.js after DOM is ready -->
+    <script src="javascript/swiper.js"></script>
 </body>
 </html>

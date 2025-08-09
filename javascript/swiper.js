@@ -1,7 +1,24 @@
 // carousel component of images for the home page
 
-// Wait for DOM to be loaded
+// Wait for DOM to be loaded/error handeling
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded, initializing Swiper...");
+    
+    // Check if Swiper is available
+    if (typeof swiper === 'undefined') {
+        console.error("Swiper is not loaded!");
+        return;
+    }
+    
+    // Check if swiper container exists
+    const swiperContainer = document.querySelector('.swiper');
+    if (!swiperContainer) {
+        console.error("Swiper container not found!");
+        return;
+    }
+    
+    console.log("Swiper container found, initializing...");
+    
     // Initialize Swiper
     const swiper = new Swiper('.swiper', {
         modules: [Swiper.Navigation, Swiper.Pagination, Swiper.Autoplay],
@@ -31,5 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         }
     });
+    
+    console.log("Swiper initialized successfully!");
 });
 
