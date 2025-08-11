@@ -503,7 +503,8 @@ button:hover, .btn-lg:hover {
 .calendly-inline-widget{
   margin-top: 20px;
   max-width: fit-content;
-  max-height: 60rem;
+  height: 100%; 
+  overflow: auto;
 }
 
   /* Tablet styles */
