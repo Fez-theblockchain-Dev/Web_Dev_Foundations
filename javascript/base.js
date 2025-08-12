@@ -133,6 +133,20 @@ const startAutoSlideshow = () => {
 // Shopping cart functionality
 let cart = [];
 
+// Load cart from sessionStorage on page load
+const loadCartFromStorage = () => {
+    const savedCart = sessionStorage.getItem('abcFitnessCart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartDisplay();
+    }
+};
+
+// Save cart to sessionStorage
+const saveCartToStorage = () => {
+    sessionStorage.setItem('abcFitnessCart', JSON.stringify(cart));
+};
+
 const addToCart = (itemName, price) => {
     const existingItem = cart.find(item => item.name === itemName);
     // allows user to increment/decrement the item in the cart
@@ -147,17 +161,108 @@ const addToCart = (itemName, price) => {
     }
     
     updateCartDisplay();
+    saveCartToStorage(); // Save to sessionStorage
     showCartNotification(itemName);
 };
 
 const removeFromCart = (itemName) => {
     cart = cart.filter(item => item.name !== itemName);
     updateCartDisplay();
+    saveCartToStorage(); // Save to sessionStorage
 };
 
 const updateCartDisplay = () => {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
+    
+    if (!cartItems || !cartTotal) return;
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+        cartTotal.textContent = '0.00';
+        return;
+    }
+    
+    let total = 0;
+    let cartHTML = '';
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        cartHTML += `
+            <div class="cart-item">
+                <span>${item.name} x${item.quantity}</span>
+                <span>$${itemTotal.toFixed(2)}</span>
+                <button onclick="removeFromCart('${item.name}')" class="remove-btn">Remove</button>
+            </div>
+        `;
+    });
+    
+    cartItems.innerHTML = cartHTML;
+    cartTotal.textContent = total.toFixed(2);
+};
+
+// Modal functionality for viewing cart
+const openCartModal = () => {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('cart-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'cart-modal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Shopping Cart</h2>
+                    <span class="close" onclick="closeCartModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-cart-items"></div>
+                    <div class="modal-cart-total">
+                        <strong>Total: $<span id="modal-cart-total">0.00</span></strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Add click event to close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeCartModal();
+            }
+        });
+        
+        // Add escape key functionality
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeCartModal();
+            }
+        });
+    }
+    
+    // Update modal content with current cart data
+    updateModalCartDisplay();
+    
+    // Show modal
+    modal.style.display = 'block';
+};
+
+const closeCartModal = () => {
+    const modal = document.getElementById('cart-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+};
+
+const updateModalCartDisplay = () => {
+    const cartItems = document.getElementById('modal-cart-items');
+    const cartTotal = document.getElementById('modal-cart-total');
     
     if (!cartItems || !cartTotal) return;
     
@@ -236,6 +341,8 @@ const checkout = () => {
     // Clear cart
     cart = [];
     updateCartDisplay();
+    saveCartToStorage(); // Save to sessionStorage
+    updateModalCartDisplay(); // Update modal if open
 };
 
 const clearCart = () => {
@@ -247,6 +354,8 @@ const clearCart = () => {
     if (confirm('Are you sure you want to clear your cart?')) {
         cart = [];
         updateCartDisplay();
+        saveCartToStorage(); // Save to sessionStorage
+        updateModalCartDisplay(); // Update modal if open
         alert('Cart cleared successfully!');
     }
 };
@@ -291,6 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize slideshow and fetch data
     initializeSlideshow();
     fetchHomeData();
+    loadCartFromStorage(); // Load cart from sessionStorage on page load
 });
 
 
