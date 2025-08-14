@@ -1,24 +1,82 @@
 const { handler } = require('@netlify/functions');
+const { Pool } = require('pg');
 
-// Mock database functions (replace with your actual database logic)
-const mockDb = {
+// Database connection configuration
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+// Real database functions
+const db = {
   fetchActiveUsers: async () => {
-    // Simulate database call
-    return [
-      { id: 1, name: 'John Doe', status: 'active' },
-      { id: 2, name: 'Jane Smith', status: 'active' }
-    ];
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM users WHERE status = $1', ['active']);
+      client.release();
+      return result.rows;
+    } catch (error) {
+      console.error('Database error:', error);
+      return [];
+    }
+  },
+  
+  addUser: async (userData) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query(
+        'INSERT INTO users (name, email, status) VALUES ($1, $2, $3) RETURNING *',
+        [userData.name, userData.email, 'active']
+      );
+      client.release();
+      return result.rows[0];
+    } catch (error) {
+      console.error('Database error:', error);
+      throw error;
+    }
+  },
+  
+  addNewsletterSubscriber: async (subscriberData) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query(
+        'INSERT INTO newsletter_subscribers (name, email, fitness_level, consent, subscribed_at, source) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+        [subscriberData.name, subscriberData.email, subscriberData.fitnessLevel, subscriberData.consent, subscriberData.subscribedAt, subscriberData.source]
+      );
+      client.release();
+      return result.rows[0];
+    } catch (error) {
+      console.error('Database error:', error);
+      throw error;
+    }
   }
 };
 
-const mockAnalyticsService = {
+const analyticsService = {
   getSiteMetrics: async () => {
-    // Simulate analytics call
-    return {
-      pageViews: 1500,
-      uniqueVisitors: 450,
-      conversionRate: 0.15
-    };
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT COUNT(*) as total_users FROM users');
+      const userCount = parseInt(result.rows[0].total_users);
+      client.release();
+      
+      return {
+        pageViews: 1500,
+        uniqueVisitors: 450,
+        conversionRate: 0.15,
+        totalUsers: userCount
+      };
+    } catch (error) {
+      console.error('Analytics error:', error);
+      return {
+        pageViews: 1500,
+        uniqueVisitors: 450,
+        conversionRate: 0.15,
+        totalUsers: 0
+      };
+    }
   }
 };
 
@@ -63,8 +121,8 @@ exports.handler = async (event, context) => {
           
           // Simulate your original server logic
           const [users, stats] = await Promise.all([
-            mockDb.fetchActiveUsers(),
-            mockAnalyticsService.getSiteMetrics()
+            db.fetchActiveUsers(),
+            analyticsService.getSiteMetrics()
           ]);
           
           return {
@@ -75,6 +133,76 @@ exports.handler = async (event, context) => {
             },
             body: JSON.stringify({ users, stats })
           };
+        }
+        break;
+        
+      case '/newsletter':
+        if (event.httpMethod === 'POST') {
+          try {
+            const body = JSON.parse(event.body || '{}');
+            const subscriber = await db.addNewsletterSubscriber(body);
+            
+            return {
+              statusCode: 201,
+              headers: {
+                ...headers,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ 
+                success: true, 
+                message: 'Newsletter subscription successful',
+                subscriber 
+              })
+            };
+          } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            return {
+              statusCode: 500,
+              headers: {
+                ...headers,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ 
+                success: false, 
+                error: 'Failed to subscribe to newsletter' 
+              })
+            };
+          }
+        }
+        break;
+        
+      case '/users':
+        if (event.httpMethod === 'POST') {
+          try {
+            const body = JSON.parse(event.body || '{}');
+            const user = await db.addUser(body);
+            
+            return {
+              statusCode: 201,
+              headers: {
+                ...headers,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ 
+                success: true, 
+                message: 'User created successfully',
+                user 
+              })
+            };
+          } catch (error) {
+            console.error('User creation error:', error);
+            return {
+              statusCode: 500,
+              headers: {
+                ...headers,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ 
+                success: false, 
+                error: 'Failed to create user' 
+              })
+            };
+          }
         }
         break;
         

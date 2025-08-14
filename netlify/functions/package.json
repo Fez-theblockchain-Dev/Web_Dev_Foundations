@@ -4,7 +4,8 @@
   "description": "Netlify Functions for ABC Fitness",
   "main": "api.js",
   "dependencies": {
-    "@netlify/functions": "^2.0.0"
+    "@netlify/functions": "^2.0.0",
+    "pg": "^8.16.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,4 +13,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-} 
+}
