@@ -253,7 +253,7 @@ class NewsletterComponent {
     loadSubscribers() {
         try {
             const stored = localStorage.getItem('abc-fitness-subscribers');
-            return stored ? JSON.parse(stored) : [];
+            return stored ? JSON.parse(Stored) : [];
         } catch (error) {
             console.error('Error loading subscribers:', error);
             return [];
