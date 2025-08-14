@@ -140,7 +140,7 @@ class NewsletterComponent {
     /**
      * Handle newsletter form submission
      */
-    handleNewsletterSubmission(event) {
+    async handleNewsletterSubmission(event) {
         const formData = new FormData(event.target);
         const subscriberData = {
             name: formData.get('name'),
@@ -160,6 +160,27 @@ class NewsletterComponent {
             this.showMessage(this.options.successMessage, 'Thank you for subscribing to our newsletter!');
             event.target.reset();
             console.log('New newsletter subscription:', subscriberData);
+        }
+
+        // Send to database via API
+        try {
+            const response = await fetch('/.netlify/functions/api/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(subscriberData)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            console.log('Newsletter subscription saved to database:', result);
+        } catch (error) {
+            console.error('Error saving newsletter subscription:', error);
+            // Still show success message to user even if database save fails
         }
 
         // Add subscriber to the list
