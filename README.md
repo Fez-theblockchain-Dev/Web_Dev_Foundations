@@ -45,7 +45,7 @@ Sophia_webDevFoundations_Project/
 ```
 
 ## Live Demo
-[Add your Netlify deployment URL here]
+abcfitnesswguwebdev.netlify.app
 
 ## Database Schema
 - **users**: User account management
