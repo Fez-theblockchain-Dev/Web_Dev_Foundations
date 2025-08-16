@@ -26,8 +26,9 @@ body {
   border-radius: 8px;
   margin-bottom: 20px;
   display: flex;
+  flex-direction: row;
   gap: 20px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   width: 100%;
   max-width: 100%;
@@ -502,7 +503,7 @@ main p {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.888);
 }
 
 .swiper-button-next::after,
@@ -523,7 +524,7 @@ main p {
 
 /* Contact form styling */
 .contact-form {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.888);
   padding: 30px;
   border-radius: 8px;
   margin: 20px 0;
