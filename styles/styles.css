@@ -57,6 +57,11 @@ body {
   transform: translateY(1px);
 }
 
+#homeButton {
+  position: relative
+  
+}
+
 /* Main content styling */
 main {
   margin-bottom: 120px; /* Add space for fixed footer */

@@ -405,3 +405,18 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchHomeData();
     loadCartFromStorage(); // Load cart from sessionStorage on page load
 });
+
+
+// function for returning the user to the home page when clicking gym logo/favicon
+const homeButton = document.getElementById('homeButton');
+// add click listener
+    homeButton.addEventListener("click", function() {
+        window.location.href = "home.html";
+    });
+
+
+   
+
+
+
+
