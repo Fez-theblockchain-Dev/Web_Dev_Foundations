@@ -1,3 +1,6 @@
+const { Client } = require("pg");
+
+
 // DOM manipulation file for the client side user
 const nav = document.getElementById("nav");
 
@@ -402,5 +405,3 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchHomeData();
     loadCartFromStorage(); // Load cart from sessionStorage on page load
 });
-
-
