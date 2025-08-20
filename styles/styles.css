@@ -25,14 +25,19 @@ body {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   gap: 20px;
-  /* flex-wrap: wrap; */
-  justify-content: center;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .nav a {
@@ -58,9 +63,9 @@ body {
 }
 
 #homeButton {
-  position: left;
-
-
+  margin-left: 25px;
+  position: relative; 
+  justify-self: start;
 }
 
 /* Main content styling */
@@ -503,7 +508,7 @@ main p {
 
 .swiper-button-next,
 .swiper-button-prev {
-  
+
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -670,10 +675,18 @@ button:hover, .btn-lg:hover {
     }
 
     .nav {
+      display: flex;
       flex-direction: column;
       gap: 10px;
       width: 100%;
       padding: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
     }
 
     .nav a {
