@@ -413,9 +413,25 @@ const homeButton = document.getElementById('homeButton');
     homeButton.addEventListener("click", function() {
         window.location.href = "home.html";
     });
+    
+// assigned 2 variables so the computer can recognize the difference between the current page the user is on & the expected/desired page of the home screen
+   try {
+    setTimeout(() => {
+        const expectedPage = 'home.html';
+        const currentPage = window.location.pathname.split('/').pop();
+    
+
+   if (currentPage !== expectedPage) {
+    console.error('⚠️ The homeButton is not working right now. Please use the home tab instead.');
+   }
+}, 300);
+} catch (error){
+    console.log('❌ Error while trying to redirect with homeButton', error);
+
+}
 
 
-   
+
 
 
 
