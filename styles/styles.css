@@ -58,8 +58,9 @@ body {
 }
 
 #homeButton {
-  position: relative
-  
+  position: left;
+
+
 }
 
 /* Main content styling */
@@ -310,6 +311,10 @@ main p {
   background-color: #1976D2;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.clear-cart-btn {
+  margin: 2rem;
+  
 }
 
 /* Modal styles */
