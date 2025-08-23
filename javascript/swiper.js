@@ -4,8 +4,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM loaded, initializing Swiper...");
     
-    // Check if Swiper is available
-    if (typeof swiper === 'undefined') {
+    // Check if Swiper is available (must keep the 'Swiper' type in uppercase for the library to be called on)
+    if (typeof Swiper === 'undefined') {
         console.error("Swiper is not loaded!");
         return;
     }
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const revolvingCardDeck = new swiperFunction() {
-    setTimeout(callbackFunction, delayInMilliseconds) => {
-        // Your code to execute after 2 seconds goes here
-        console.log("2 seconds have passed");
-    }, 2000;
-})
+// const revolvingCardDeck = new swiperFunction() {
+//     setTimeout(callbackFunction, delayInMilliseconds) => {
+//         // Your code to execute after 2 seconds goes here
+//         console.log("2 seconds have passed");
+//     }, 2000;
+// })
