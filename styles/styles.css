@@ -639,9 +639,9 @@ button:hover, .btn-lg:hover {
 }
 
 .calendly-inline-widget{
-  margin-top: 20px;
+  margin-top: 20;
   max-width: fit-content;
-  height: 100%; 
+  height: 50vh; 
   overflow: auto;
 }
 
@@ -828,4 +828,13 @@ footer {
 
 #subscribe-form button:hover {
   background-color: #b8b8b8;
+}
+
+.class-container {
+  animation: mymove 2s ease-in-out;
+}
+
+@keyframes mymove {
+  from {top: 20rem;}
+  to {top: 5vh;}
 }
