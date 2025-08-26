@@ -103,21 +103,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // new swiper component initiated below for the testimonial cards on home page
 
-const swiper = new Swiper('.testimonial-swiper', {
+const testimonialSwiper = new Swiper('.testimonial-swiper', {
     
     loop: true,
     autoplay: {
         delay:4000,
         disableOnInteraction: false,
-}, 
+    }, 
 
-pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-},
+    pagination: {
+        el: '.testimonial-pagination',
+        clickable: true,
+    },
 
-spaceBetween: 20,
-grabCursor: true,
+    navigation: {
+        nextEl: '.testimonial-swiper .swiper-button-next',
+        prevEl: '.testimonial-swiper .swiper-button-prev',
+    },
+
+    spaceBetween: 20,
+    grabCursor: true,
 
 });
 
