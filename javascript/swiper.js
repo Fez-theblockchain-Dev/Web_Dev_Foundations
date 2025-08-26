@@ -101,9 +101,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// const revolvingCardDeck = new swiperFunction() {
-//     setTimeout(callbackFunction, delayInMilliseconds) => {
-//         // Your code to execute after 2 seconds goes here
-//         console.log("2 seconds have passed");
-//     }, 2000;
-// })
+// new swiper component initiated below for the testimonial cards on home page
+
+const swiper = new Swiper('.testimonial-swiper', {
+    
+    loop: true,
+    autoplay: {
+        delay:4000,
+        disableOnInteraction: false,
+}, 
+
+pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+},
+
+spaceBetween: 20,
+grabCursor: true,
+
+});
+

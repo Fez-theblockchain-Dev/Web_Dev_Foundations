@@ -830,11 +830,44 @@ footer {
   background-color: #b8b8b8;
 }
 
-.class-container {
-  animation: mymove 2s ease-in-out;
+.testimonial-swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  position: relative;
+  display: flex;
+  min-height: 30vh;
+  
 }
+
+.testimonial-swiper .swiper-wrapper {
+  min-height: 200px; /* Prevent layout jump */
+}
+
+.testimonial-swiper .swiper-slide {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  transition: transform 0.3s ease;
+  height: auto;
+  text-decoration-color: black;
+}
+
+.testimonial-swiper .swiper-slide:hover {
+  transform: translateY(-5px); /* smooth hover effect */
+}
+
+.testimonial-pagination {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
 
 @keyframes mymove {
   from {top: 20rem;}
   to {top: 5vh;}
 }
+

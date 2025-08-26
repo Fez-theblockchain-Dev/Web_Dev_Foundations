@@ -15,6 +15,7 @@ Home webpage for the website.
     <script src="javascript/newsletter.js" defer></script>
     <!-- Swiper JS - load before custom swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="javascript/swiper.js"></script>
 </head>
 <body>
     <div class="nav">
@@ -54,9 +55,26 @@ Home webpage for the website.
             <div style="max-width: 110vw ; max-height: 90vw ; position: relative ; float: left" class="calendly-inline-widget" data-url="https://calendly.com/megalax18/30min"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div> 
-            <card class="card-container" style="display: flex; position: relative; height: 50vh ; width: 20vw; border-style: solid; float: right">card placeholder</card>
-    </main>
+    <div class="testimonial-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="font-family: 'Courier New', Courier, monospace;">
+                I dropped from 205 lbs to 165 lbs in just 4 months thanks to Coach Jake's personalized HIIT programs. 
+                The weekly body composition check-ins kept me accountable and motivated!"
+                — Taylor M.
+            </div>
+            <div class="swiper-slide" style="font-family: 'Courier New', Courier, monospace;">
+                "In just 6 weeks, I went from bench pressing 95 lbs to 155 lbs.
+                The strength training guidance from ABC Fitness Studio's trainers was exactly what I needed to finally break through my plateau!"
+                — Chris D.</div>
+            <div class="swiper-slide" style= "font-family: 'Courier New', Courier, monospace;">
+                "After joining ABC Fitness Studio, I lost 30 pounds in 3 months and reduced my body fat percentage from 28% to 18%.
+                Their meal planning advice and group boot camps were game-changers!"
+                — Lena R.</div>
+
+                <div class="swiper-pagination testimonial-swiper"></div>
+            </div>
+        </main>
     <!-- Load swiper.js after DOM is ready -->
-    <script src="javascript/swiper.js"></script>
+    <!-- <script src="javascript/swiper.js"></script> -->
 </body>
 </html>
