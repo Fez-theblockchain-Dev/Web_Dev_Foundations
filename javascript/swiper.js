@@ -128,19 +128,20 @@ const testimonialSwiper = new Swiper('.testimonial-swiper', {
 
     grabCursor: true,
     
-    // Responsive breakpoints
+   // Responsive breakpoints
     breakpoints: {
         640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+     },
+     
+     768: {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    },
         1024: {
-            slidesPerView: 1,
-            spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 30,
         },
     }
 });
