@@ -104,26 +104,44 @@ document.addEventListener('DOMContentLoaded', function() {
 // new swiper component initiated below for the testimonial cards on home page
 
 const testimonialSwiper = new Swiper('.testimonial-swiper', {
-    
+    slidesPerView: 1,
+    spaceBetween: 30,
     loop: true,
+    centeredSlides: true,
+    effect: 'slide',
+    
     autoplay: {
-        delay:4000,
+        delay: 4000,
         disableOnInteraction: false,
     }, 
-    
+
     pagination: {
         el: '.testimonial-pagination',
         clickable: true,
+        type: 'bullets',
     },
-    
-    effect: 'slide',
+
     navigation: {
         nextEl: '.testimonial-swiper .swiper-button-next',
         prevEl: '.testimonial-swiper .swiper-button-prev',
     },
 
-    spaceBetween: 20,
     grabCursor: true,
-
+    
+    // Responsive breakpoints
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+        },
+    }
 });
 
