@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Autoplay
         autoplay: {
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false,
         },
         
@@ -109,11 +109,6 @@ const testimonialSwiper = new Swiper('.testimonial-swiper', {
     loop: true,
     centeredSlides: true,
     effect: 'slide',
-    
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    }, 
 
     pagination: {
         el: '.testimonial-pagination',
