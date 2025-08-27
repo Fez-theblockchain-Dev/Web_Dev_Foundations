@@ -110,12 +110,13 @@ const testimonialSwiper = new Swiper('.testimonial-swiper', {
         delay:4000,
         disableOnInteraction: false,
     }, 
-
+    
     pagination: {
         el: '.testimonial-pagination',
         clickable: true,
     },
-
+    
+    effect: 'slide',
     navigation: {
         nextEl: '.testimonial-swiper .swiper-button-next',
         prevEl: '.testimonial-swiper .swiper-button-prev',

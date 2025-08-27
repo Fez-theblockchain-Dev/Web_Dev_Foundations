@@ -830,38 +830,73 @@ footer {
   background-color: #b8b8b8;
 }
 
-.testimonial-swiper {
-  width: 100%;
-  max-width: 600px;
-  margin: 40px auto;
-  position: relative;
-  display: flex;
-  min-height: 30vh
+.testimonial-swiper .swiper-wrapper {
+  min-height: 5rem;
+  align-items: center;
+  justify-content: flex-start;
   
 }
 
-.testimonial-swiper .swiper-wrapper {
-  min-height: 200px; /* Prevent layout jump */
-}
-
-.testimonial-swiper .swiper-slide {
+.testimonial-swiper .swiper-card {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  transition: transform 0.3s ease;
-  height: auto;
-  text-decoration-color: black;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 5rem;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+  height: fit-content;
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  min-height: 25px;
+  min-width: 30px; 
+  transform: scale(0.95);
+  opacity: 0.9;
+  }
+  
+
+
+.testimonial-swiper .swiper-slide-active {
+  transform: scale(1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .testimonial-swiper .swiper-slide:hover {
-  transform: translateY(-5px); /* smooth hover effect */
+  transform: scale(1.02);
+}
+
+.testimonial-swiper .swiper-button-next:hover,
+.testimonial-swiper .swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.8);
+}
+
+.testimonial-swiper .swiper-button-next::after,
+.testimonial-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .testimonial-pagination {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
+}
+
+.testimonial-pagination .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  /* opacity: 1; */
+  /* cursor: pointer;
+  transition: all 0.3s ease; */
+}
+
+.testimonial-pagination .swiper-pagination-bullet-active {
+  background-color: white;
+  transform: scale(1.2);
 }
 
 
@@ -869,5 +904,4 @@ footer {
 @keyframes mymove {
   from {top: 20rem;}
   to {top: 5vh;}
-}
-
+} 
