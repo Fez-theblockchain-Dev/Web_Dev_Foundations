@@ -751,7 +751,7 @@ button:hover, .btn-lg:hover {
       max-width: 300px;
     }
 
-  -cards-content h2 {
+  .testimonial-card h2 {
       font-size: 1.5em;
     }
 
