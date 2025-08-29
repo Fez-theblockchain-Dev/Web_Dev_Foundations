@@ -639,6 +639,7 @@ button:hover, .btn-lg:hover {
   max-width: fit-content;
   height: 50vh; 
   overflow: auto;
+  border-radius: 12px;
 }
 
   /* Tablet styles */
@@ -715,7 +716,7 @@ button:hover, .btn-lg:hover {
       margin: 10px;
       padding: 20px;
     }
-    footer{
+    footer {
       position: fixed;
       bottom: 0;
       left: 0;
