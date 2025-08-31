@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testimonialSwiper = new Swiper('.testimonial-swiper', {
         slidesPerView: 1,
         spaceBetween: 30,
+        centeredSlides: true,
         loop: true,
         centeredSlides: true,
         effect: 'slide',
