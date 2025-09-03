@@ -836,7 +836,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); */
   align-items: center;
   justify-content: center;
   display: flex;
@@ -874,7 +874,7 @@ footer {
 .testimonial-swiper .swiper-slide-active {
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); */
   z-index: 2;
 }
 
@@ -909,7 +909,7 @@ footer {
 .testimonial-swiper .swiper-button-next,
 .testimonial-swiper .swiper-button-prev {
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   width: 40px;
   height: 40px;
   border-radius: 50%;
