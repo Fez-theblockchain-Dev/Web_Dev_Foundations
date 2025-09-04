@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true,
         centeredSlides: true,
         effect: 'slide',
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
         pagination: {
             el: '.testimonial-pagination',
             clickable: true,

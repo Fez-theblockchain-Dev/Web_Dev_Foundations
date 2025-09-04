@@ -559,13 +559,6 @@ main p {
   text-align: left;
 }
 
-/* .topic-text {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: white;
-} */
-
 .input-box {
   margin-bottom: 15px;
 }
@@ -645,7 +638,7 @@ button:hover, .btn-lg:hover {
 }
 
   /* Tablet styles */
-  @media (min-width: 601px) and (max-width: 1024px) {
+  @media (min-width: 320px) and (max-width: 500px) {
     .nav {
       width: 100%;
       padding: 20px;
@@ -660,7 +653,7 @@ button:hover, .btn-lg:hover {
 
   @media (max-width: 600px) {
     body {
-      flex-direction: column;
+      flex-direction: row;
       gap: 8px;
       align-items: center;
       justify-content: flex-start;
@@ -838,10 +831,11 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 30px;
-  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   align-items: center;
   justify-content: center;
   display: flex;
+  
 }
 
 .testimonial-swiper .swiper-wrapper {
