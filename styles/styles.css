@@ -952,23 +952,33 @@ footer {
   background-color: white;
   transform: scale(1.2);
 }
-* {
+.parent {
   box-sizing: border-box;
   padding:0;
   margin:0;
-  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wheel {
   position: relative;
   height: 500px;
   width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wheel-button {
   width:100%;
   height: 100%;
   position: relative;
+  border-radius: 50%;
+  border:8px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
