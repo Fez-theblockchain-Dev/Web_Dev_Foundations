@@ -1004,10 +1004,18 @@ footer {
   height: 100%;
   position: relative;
   border-radius: 50%;
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+span {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  position: absolute;
+
 }
 
 span strong {
