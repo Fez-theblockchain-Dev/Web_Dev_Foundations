@@ -22,8 +22,12 @@ const excercises = {
 // math.rand operator that I will be implementing for random index selection in the array
 
 function getRandomExercise() {
+    let x= 9999;
+    let b= 1025;
+
     const keys = Object.keys(excercises);
-    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    // const randomKey = keys[Math.floor(Math.random() *(x-b)+b)];
+    document.getElementById('wheel').style.transform= rotate(+randomKey + 'index')
     return excercises[randomKey];
 }
 
@@ -32,8 +36,29 @@ console.log(getRandomExercise());
 // create function that allows the .wheel element to spin when button onClick() event occurs
 document.addEventListener('DOMContentLoaded', () => {
     const wheel = document.querySelector('.wheel');
+    if (!wheel) return;
+
     const labels = wheel.querySelectorAll('.wheel-label');
-  
-    wheel.style.setProperty('--count', labels.length);
+    const count = labels.length || 12;
+
+    wheel.style.setProperty('--count', count);
     labels.forEach((el, idx) => el.style.setProperty('--i', idx));
+
+    // Spin behavior
+    let currentRotation = 0;
+    const button = wheel.querySelector('.wheel-button');
+    if (button) {
+        button.addEventListener('click', () => {
+            const sliceAngle = 360 / count;
+            const spins = 5; // full rotations before landing
+            const randomSlice = Math.floor(Math.random() * count);
+            const rotation = spins * 360 + randomSlice * sliceAngle;
+
+            currentRotation += rotation;
+            wheel.style.transition = 'transform 4s cubic-bezier(0.2, 0.8, 0, 1)';
+            wheel.style.transform = `rotate(${currentRotation}deg)`;
+        });
+    }
   });
+
+
