@@ -32,7 +32,7 @@ console.log(getRandomExercise());
 // create function that allows the .wheel element to spin when button onClick() event occurs
 
 wheelButton.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.wheel-button');
+    const btn = document.getElementById('wheel');
     if (btn) btn.addEventListener('click', spinWheel);
         return;
 
