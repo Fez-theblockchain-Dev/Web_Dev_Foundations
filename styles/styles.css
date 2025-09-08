@@ -974,7 +974,6 @@ footer {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
   aspect-ratio: 1;
-  --inner-gap: 60px;       /* distance from center to labels (controls ring radius) */
   --count: 12;             /* set by JS, default 12 fallback */
   --step: calc(360deg / var(--count));
 }
@@ -995,51 +994,32 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  /* z-index: 10; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .wheel-button:hover {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
   background: #555;
 }
 
 
-
-/*
-span {
-  width: 50%;
-  height: 50%;
-  display: inline-block;
+.wheel-label {
   position: absolute;
-
-}
-
-span strong {
-  width: 65px;
-  height: 65px;
-  Line-height: 65px;
-  border-radius: 50%;
-  font-size: 24px;
-  text-align: center;
-  background-color: #000;
-  position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  top: 50%;
+  --inner-gap: 150px;       /* distance from center to labels (controls ring radius) */
+  transform: 
+  translate(-50%, -50%)
+  rotate(calc(var(--i) * var(--step)))
+  translate(var(--inner-gap))
+  rotate(calc(var(--i) * -1 * var(--step)));
+  transform-origin: center;
+  /* optional fine tuning */
+  white-space: nowrap;
+  font-weight: bold;
 }
-
-*.p {
-clip-path: polygon();
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-width: 100%;
-
-} */
-
-
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) { body {

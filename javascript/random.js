@@ -30,21 +30,10 @@ function getRandomExercise() {
 console.log(getRandomExercise());
 
 // create function that allows the .wheel element to spin when button onClick() event occurs
-
-wheelButton.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('wheel');
-    if (btn) btn.addEventListener('click', spinWheel);
-        return;
-
-    });
-
-Object.addEventListener("click", spinWheel())
-
-
-
-const sliceAngle = 360 / 12;
-const randomSlice = Math.floor(Math.random() * 12);
-const rotation = spins * 360 + (randomSlice * sliceAngle) + (sliceAngle / 2);
-
-currentRotation += rotation;
-wheel.style.transform = `rotate(${currentRotation}deg)`;
+document.addEventListener('DOMContentLoaded', () => {
+    const wheel = document.querySelector('.wheel');
+    const labels = wheel.querySelectorAll('.wheel-label');
+  
+    wheel.style.setProperty('--count', labels.length);
+    labels.forEach((el, idx) => el.style.setProperty('--i', idx));
+  });
