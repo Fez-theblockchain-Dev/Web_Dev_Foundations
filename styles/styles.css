@@ -952,16 +952,11 @@ footer {
   background-color: white;
   transform: scale(1.2);
 }
-.parent {
+
+.wheel {
   box-sizing: border-box;
   padding:0;
   margin:0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wheel {
   position: relative;
   height: 500px;
   width: 500px;
@@ -977,7 +972,7 @@ footer {
 }
 
 .wheel-button {
-  position: relative;
+  position: absolute;
   width: 80px;
   height: 80px;
   border-radius: 50%;
