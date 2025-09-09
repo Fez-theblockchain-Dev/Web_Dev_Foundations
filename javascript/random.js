@@ -22,12 +22,8 @@ const excercises = {
 // math.rand operator that I will be implementing for random index selection in the array
 
 function getRandomExercise() {
-    let x= 9999;
-    let b= 1025;
-
     const keys = Object.keys(excercises);
-    // const randomKey = keys[Math.floor(Math.random() *(x-b)+b)];
-    document.getElementById('wheel').style.transform= rotate(+randomKey + 'index')
+    const randomKey = keys[Math.floor(Math.random() * keys.length)];
     return excercises[randomKey];
 }
 
