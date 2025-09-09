@@ -1019,6 +1019,7 @@ footer {
   /* optional fine tuning */
   white-space: nowrap;
   font-weight: bold;
+  color: black;
 }
 
 /* Extra small devices (phones, 600px and down) */
