@@ -3,7 +3,7 @@ that will randomly select a workout for the user to do when they feel lost in th
 
 
 // created array that will store the string values containing dif workouts a person can do
-const excercises = {
+const exercises = {
     0: "Barbell Squats 3 x 8 reps, 60% max weight", 
     1: "Incline dumbell bench press, 3 x 8 reps, 60% max weight",
     2: "Chest supported lat row (elbows 45 degrees from body), 3 x 8 reps, 60% max weight",
@@ -22,9 +22,9 @@ const excercises = {
 // math.rand operator that I will be implementing for random index selection in the array
 
 function getRandomExercise() {
-    const keys = Object.keys(excercises);
+    const keys = Object.keys(exercises);
     const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    return excercises[randomKey];
+    return exercises[randomKey];
 }
 
 console.log(getRandomExercise());
@@ -64,4 +64,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
 
-    console.log('exercise');
+    console.log('getRandomExercise');
