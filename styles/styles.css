@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   transform-style: preserve-3d;
-  perspective: 10;
+  perspective: 10px;
 }
 
 /* Navigation styling */
@@ -358,7 +358,7 @@ main p {
 .modal-header {
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   padding: 20px 25px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -630,7 +630,7 @@ button:hover, .btn-lg:hover {
 }
 
 .calendly-inline-widget{
-  margin-top: 20;
+  margin-top: 20px;
   max-width: fit-content;
   height: 50vh; 
   overflow: auto;
@@ -952,19 +952,19 @@ footer {
   background-color: white;
   transform: scale(1.2);
 }
-.arrow {
-  /* display: flex;
+.arrow::before {
+  
+  position: relative;
+  display: flex;
   justify-content: center;
-  align-items: center; */
-  content: '⬇️';
-  position: fixed;
-  color: black;
+  align-items: center;
+  content: "⬇️";
+  background-color: black;
+  font-weight: bolder;
   height: 60px;
   width: 60px;
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%, -100%);
-  z-index: 9999;
+  /* transform:translate(-50%, -100%); */
+  /* z-index: 9999; */
 }
 
 .wheel {
