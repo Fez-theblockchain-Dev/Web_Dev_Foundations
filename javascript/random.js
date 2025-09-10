@@ -57,8 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-     let wheelButton = document.querySelector(".wheel-button");
-     let userMsg = document.querySelector(excercises)
+    button.addEventListener('click', () => {
+        setTimeout(() => {
+            const exercise = getRandomExercise();
+            document.getElementById('exercise-result').textContent = exercise;
+        }, 4000);
+    });
 
-});
+    console.log('exercise');
