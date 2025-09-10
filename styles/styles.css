@@ -954,18 +954,12 @@ footer {
 }
 .arrow::before {
   
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   content: "⬇️";
-  background-color: black;
-  font-size: 1.1rem;
-  font-weight: bolder;
-  height: 60px;
-  width: 60px;
-  /* transform:translate(-50%, -100%); */
-  /* z-index: 9999; */
+  font-weight: normal;
 }
 
 .wheel {
