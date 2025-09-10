@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             wheel.style.transform = `rotate(${currentRotation}deg)`;
         });
     }
-  });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+     let wheelButton = document.querySelector(".wheel-button");
+     let userMsg = document.querySelector(excercises)
 
+});
