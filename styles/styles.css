@@ -960,6 +960,7 @@ footer {
   align-items: center;
   content: "⬇️";
   background-color: black;
+  font-size: 1.1rem;
   font-weight: bolder;
   height: 60px;
   width: 60px;
