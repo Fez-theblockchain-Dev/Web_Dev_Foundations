@@ -953,13 +953,14 @@ footer {
   transform: scale(1.2);
 }
 .arrow::before {
-  
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
   content: "⬇️";
   font-weight: normal;
+  font-size: larger;
+  padding: 40px;
 }
 
 .wheel {
