@@ -952,16 +952,28 @@ footer {
   background-color: white;
   transform: scale(1.2);
 }
-.arrow::before {
+
+.arrow {
   position: relative;
-  display: flex;
-  justify-content: top;
-  align-items: center;
-  content: "⬇️";
-  font-weight: normal;
-  font-size: larger;
-  padding: 40px;
+  width: 500px;
+  margin: 0 auto;   /* centers arrow block to align with .wheel */
+  height: 0;        /* no extra vertical gap */
 }
+
+.parent { position: relative; width: 500px; margin: 0 auto; }
+.arrow::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -10px;
+  left: 50%;
+  content: "⬇️";
+  transform: translate(-50%, -100%);
+  font-weight: normal;
+  padding: 20px;
+  }
+
 
 .wheel {
   box-sizing: border-box;
