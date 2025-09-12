@@ -430,11 +430,3 @@ const homeButton = document.getElementById('homeButton');
 
 }
 
-
-
-
-
-
-
-
-
