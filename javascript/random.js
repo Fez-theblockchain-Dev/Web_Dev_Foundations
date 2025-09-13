@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
 
-console.log(getRandomExercise);
+console.log('getRandomExercise');
 
 
 
