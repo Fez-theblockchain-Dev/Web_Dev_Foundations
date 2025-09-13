@@ -984,7 +984,7 @@ footer {
   align-items: center;
   border: 8px solid white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  /* margin: -20px auto; */
+  margin: -20px auto;
   aspect-ratio: 1;
   --count: 12;             /* set by JS, default 12 fallback */
   --step: calc(360deg / var(--count));

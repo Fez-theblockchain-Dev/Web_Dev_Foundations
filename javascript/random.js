@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
         setTimeout(() => {
             const exercise = getRandomExercise();
-            document.getElementById('exercise-result').textContent = exercise;
+            alert(`Your random workout: ${exercise}`);
         }, 4000);
     });
 
-    console.warn(getRandomExercise);
+console.log(getRandomExercise);
 
 
 
