@@ -953,26 +953,27 @@ footer {
   transform: scale(1.2);
 }
 
-.arrow {
-  position: relative;
+/* .arrow {
+  position: absolute;
   width: 500px;
   margin: 0 auto;   /* centers arrow block to align with .wheel */
-  height: 0;        /* no extra vertical gap */
-}
-.arrow::before {
-  position: absolute;
+  /* height: 0;        no extra vertical gap */ */
+/* } */
+
+.arrow::after {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: -10px;
+  /* top: -10px; */
   left: 50%;
   content: "⬇️";
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0%);
   }
 
 .wheel {
   box-sizing: border-box;
-  padding:0;
+  padding:35px;
   margin:0;
   position: relative;
   height: 500px;
