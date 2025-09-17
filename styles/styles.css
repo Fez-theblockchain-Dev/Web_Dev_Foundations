@@ -954,23 +954,22 @@ footer {
 }
 
 .arrow {
-  position: absolute;
+  position: relative;
   width: 500px;
   margin: 0 auto;   /* centers arrow block to align with .wheel */
   height: 0;      
 }
 
 .arrow::after {
-  position: relative;
-  display: flex;
+  position: absolute;
+  display: grid;
   justify-content: center;
   align-items: center;
-  top: -10px;
+  top: 3px;
   left: 50%;
   content: "⬇️";
-  transform: translate(-50%, 0%);
-
-  }
+  transform: translate(-50%, -100%);
+}
 
 .wheel {
   box-sizing: border-box;
