@@ -1035,6 +1035,17 @@ footer {
   color: black;
 }
 
+.wheel-result {
+  position: relative;
+  top: 3rem;
+  font-weight: bolder;
+  color: black;
+  background-color:  #D3D3D3;
+  font-size: 15px;
+  min-height: 50px;
+  min-width: auto;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) { body {
   flex: 1 1 100% auto; 

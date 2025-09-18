@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Spin behavior
     let currentRotation = 0;
-    const button = wheel.querySelector('.wheel-button');
+    let button = wheel.querySelector('.wheel-button');
     if (button) {
         button.addEventListener('click', () => {
             const sliceAngle = 360 / count;
@@ -53,21 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
             currentRotation += rotation;
             wheel.style.transition = 'transform 4s cubic-bezier(0.2, 0.8, 0, 1)';
             wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+            // After the spin finishes, show the random workout in the DOM
+            setTimeout(() => {
+                const exercise = getRandomExercise();
+
+                // Find or create a result container near the wheel
+                let resultEl = document.querySelector('.wheel-result');
+                if (!resultEl) {
+                    resultEl = document.createElement('div');
+                    resultEl.className = 'wheel-result';
+                    // Insert after the wheel if possible, else append to body
+                    if (wheel.parentElement) {
+                        wheel.parentElement.appendChild(resultEl);
+                    } else {
+                        document.body.appendChild(resultEl);
+                    }
+                }
+
+                
+
+                resultEl.textContent = `Your random workout: ${exercise}`;
+            }, 4000);
         });
     }
 });
 
-    button.addEventListener('click', () => {
-        setTimeout(() => {
-            const exercise = getRandomExercise();
-            alert(`Your random workout: ${exercise}`);
-        }, 4000);
-    });
-
-console.log('getRandomExercise');
-
-try {
-   console.log(getRandomExercise)
-} catch (error) {
-    console.log("Error with the Random Workout Generator Wheel. A repair ticket has been sent to developer. Please try again later.")
-}
+console.log('Random Workout Generator initialized');
