@@ -80,3 +80,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Random Workout Generator initialized');
+
+// resultEl.textContent = centered || aligned;

@@ -1044,6 +1044,11 @@ footer {
   font-size: 15px;
   min-height: 50px;
   min-width: auto;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Extra small devices (phones, 600px and down) */
