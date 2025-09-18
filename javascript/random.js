@@ -66,12 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 console.log('getRandomExercise');
 
-
-
-
-
-
-
-
-
-    
+try {
+   console.log(getRandomExercise)
+} catch (error) {
+    console.log("Error with the Random Workout Generator Wheel. A repair ticket has been sent to developer. Please try again later.")
+}
