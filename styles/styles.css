@@ -1040,7 +1040,7 @@ footer {
   top: 3rem;
   font-weight: bolder;
   color: black;
-  background-color:  #D3D3D3;
+  /* background-color:  #D3D3D3; */
   font-size: 15px;
   min-height: 50px;
   min-width: auto;
