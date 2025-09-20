@@ -4,13 +4,6 @@
  * and adding them to a healthy lifestyle gym newsletter
  */
 
-/**
- * Newsletter Subscription Component
- * Reusable JavaScript component for collecting member/prospective member information
- * and adding them to a healthy lifestyle gym newsletter
- */
-
-
 class NewsletterComponent {
     constructor(options = {}) {
         this.options = {
