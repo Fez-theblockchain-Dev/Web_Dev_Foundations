@@ -4,6 +4,16 @@
  * and adding them to a healthy lifestyle gym newsletter
  */
 
+'use strict'
+
+// importing {}
+import { Form } from 'bootstrap.esm.min.js';
+Array.from(document.querySelectorAll('.form'))
+.forEach(formNode = new Form(formData));
+
+
+
+
 class NewsletterComponent {
     constructor(options = {}) {
         this.options = {
@@ -45,14 +55,15 @@ class NewsletterComponent {
                     <h3 class="newsletter-title">${this.options.title}</h3>
                     <p class="newsletter-subtitle">${this.options.subtitle}</p>
                     <form id="${this.options.formId}" class="newsletter-form">
-                        <div class="form-group">
+                        <div class="form-group"">
                             <input 
-                                type="text" 
+                                type="name" 
                                 id="newsletter-name" 
                                 name="name" 
                                 placeholder="Your Name" 
                                 required
                                 class="newsletter-input"
+                                id="floating password"
                             >
                         </div>
                         <div class="form-group">
@@ -399,3 +410,5 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = NewsletterComponent;
 }
+
+
