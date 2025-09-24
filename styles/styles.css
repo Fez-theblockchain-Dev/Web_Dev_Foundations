@@ -36,6 +36,10 @@ body {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000px;
 }
 
 .nav-links {
@@ -67,9 +71,14 @@ body {
 }
 
 #homeButton {
-  margin-left: 25px;
-  position: relative; 
-  justify-self: start;
+  margin-left: 0;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  padding-left: 3rem;
 } 
 
 /* Main content styling */
@@ -79,6 +88,7 @@ main {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+  margin-top: 90px; /* offset for fixed nav height */
 }
 
 main h1 {

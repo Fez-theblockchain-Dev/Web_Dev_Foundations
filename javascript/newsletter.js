@@ -5,11 +5,13 @@
  */
 
 'use strict'
+type="module"
 
 // trying to import { Form } 
 import { Form } from 'bootstrap.esm.min.js';
 Array.from(document.querySelectorAll('.form'))
 .forEach(formNode = new Form(formData));
+
 
 
 
@@ -55,15 +57,15 @@ class NewsletterComponent {
                     <h3 class="newsletter-title">${this.options.title}</h3>
                     <p class="newsletter-subtitle">${this.options.subtitle}</p>
                     <form id="${this.options.formId}" class="newsletter-form">
-                        <div class="form-group"">
+                        <div class="form-group">
                             <input 
                                 type="name" 
                                 id="newsletter-name" 
                                 name="name" 
-                                placeholder="Your Name" 
+                                placeholder="Your-Name" 
                                 required
                                 class="newsletter-input"
-                                id="floating password"
+                                id="floating-password"
                             >
                         </div>
                         <div class="form-group">
