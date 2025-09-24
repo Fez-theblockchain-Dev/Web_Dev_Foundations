@@ -4,13 +4,15 @@
  * and adding them to a healthy lifestyle gym newsletter
  */
 
-'use strict'
-type="module"
+'use strict';
 
 // trying to import { Form } 
 import { Form } from 'bootstrap.esm.min.js';
 Array.from(document.querySelectorAll('.form'))
 .forEach(formNode = new Form(formData));
+
+let formData = true;
+
 
 
 
@@ -65,7 +67,6 @@ class NewsletterComponent {
                                 placeholder="Your-Name" 
                                 required
                                 class="newsletter-input"
-                                id="floating-password"
                             >
                         </div>
                         <div class="form-group">
@@ -266,7 +267,7 @@ class NewsletterComponent {
     loadSubscribers() {
         try {
             const stored = localStorage.getItem('abc-fitness-subscribers');
-            return stored ? JSON.parse(Stored) : [];
+            return stored ? JSON.parse(stored) : [];
         } catch (error) {
             console.error('Error loading subscribers:', error);
             return [];
