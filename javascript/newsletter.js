@@ -7,11 +7,11 @@
 'use strict';
 
 // trying to import { Form } 
-import { Form } from 'bootstrap.esm.min.js';
-Array.from(document.querySelectorAll('.form'))
-.forEach(formNode = new Form(formData));
+// import { Form } from 'bootstrap.esm.min.js';
+// Array.from(document.querySelectorAll('.form'))
+// .forEach(formNode = new Form(formData));
 
-let formData = true;
+// let formData = true;
 
 
 
