@@ -33,34 +33,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Testimonial swiper
-    const testimonialSwiper = new Swiper('.testimonial-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: true,
-        loop: true,
-        effect: 'slide',
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
-        pagination: {
-            el: '.testimonial-pagination',
-            clickable: true,
-            type: 'bullets',
-        },
-        navigation: {
-            nextEl: '.testimonial-swiper .swiper-button-next',
-            prevEl: '.testimonial-swiper .swiper-button-prev',
-        },
-        grabCursor: true,
-        breakpoints: {
-            640:  { slidesPerView: 1, spaceBetween: 20 },
-            768:  { slidesPerView: 1, spaceBetween: 30 },
-            1024: { slidesPerView: 1, spaceBetween: 30 },
-        }
-    });
+//     const testimonialSwiper = new Swiper('.testimonial-swiper', {
+//         slidesPerView: 1,
+//         spaceBetween: 30,
+//         centeredSlides: true,
+//         loop: true,
+//         effect: 'slide',
+//         // autoplay: {
+//         //     delay: 4000,
+//         //     disableOnInteraction: false,
+//         // },
+//         pagination: {
+//             el: '.testimonial-pagination',
+//             clickable: true,
+//             type: 'bullets',
+//         },
+//         navigation: {
+//             nextEl: '.testimonial-swiper .swiper-button-next',
+//             prevEl: '.testimonial-swiper .swiper-button-prev',
+//         },
+//         grabCursor: true,
+//         breakpoints: {
+//             640:  { slidesPerView: 1, spaceBetween: 20 },
+//             768:  { slidesPerView: 1, spaceBetween: 30 },
+//             1024: { slidesPerView: 1, spaceBetween: 30 },
+//         }
+//     });
     
-    console.log("Both Swipers initialized successfully!", { mainSwiper, testimonialSwiper });
+    console.log("Main Swiper initialized successfully!", { mainSwiper });
 });
-
-
