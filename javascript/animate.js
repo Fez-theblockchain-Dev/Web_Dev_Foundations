@@ -6,10 +6,37 @@
 
 
 import anime from 'animejs/lib/anime.es.js';
+import {animate, utils} from 'animejs';
 
-anime({
-    targets: '.card-slide'
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('test');
+    
+    const arrows = document.querySelectorAll('.testimonial-swiper .swiper-button-next, .testimonial-swiper .swiper-button-prev');
+    
+    arrows.forEach((arrow) => {
+        arrow.addEventListener('click', (e) => {
+            const isNext = e.currentTarget.classList.contains('swiper-button-next');
+
+            if (isNext) {
+                nextTestimonial();      // go to next card
+            } else {
+                prevTestimonial();      // go to previous card
+            }
+        });
+    });
 });
 
-const arrowButtons = document.querySelectorAll('.testimonial-swiper .swiper-button-next, .testimonial-swiper .swiper-button-prev');
+function nextTestimonial() {
+    // advance your card stack here
+}
+
+function prevTestimonial() {
+    // go back in your card stack here
+}
+
+anime({
+    targets: '.card-slide, .testimonial-swiper .swiper-button-next, .testimonial-swiper .swiper-button-prev',
+    duration: 500
+});
+
 
