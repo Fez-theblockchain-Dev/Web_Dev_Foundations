@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true,
         autoplay: {
             delay: 3000,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
         },
         pagination: {
             el: '.swiper:not(.testimonial-swiper) .swiper-pagination',
