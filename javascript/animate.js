@@ -70,8 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Card', index, 'is now active');
             } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
                 card.classList.add('prev');
+                console.log('Card', index, 'is now prev');
             } else if (index === (currentIndex + 1) % cards.length) {
                 card.classList.add('next');
+                console.log('Card', index, 'is now next');
             }
         });
         
@@ -87,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof anime !== 'undefined') {
             anime({
                 targets: activeCard,
-                scale: [1, 0.95, 1],
+                scale: [1, 1, 1],
                 rotateY: direction === 'next' ? [0, 5, 0] : [0, -5, 0],
                 duration: 600,
                 easing: 'easeOutElastic(1, .8)'
