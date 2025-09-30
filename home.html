@@ -10,10 +10,12 @@ Home webpage for the website.
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <link rel="stylesheet" href="styles/styles.css">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
         <script src="javascript/swiper.js"></script>
         <script src="javascript/random.js"></script>
         <script src="javascript/base.js" defer></script>
         <script src="javascript/newsletter.js" defer></script>
+        <script src="javascript/animate.js" defer></script>
     <!-- Bootstrap css library CDN -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -71,27 +73,36 @@ Home webpage for the website.
         </div>
         
     <br>
-    <div class="testimonial-card-carousel-parent">
-                <div class="testimonial-card">
-                    <p>"I dropped from 205 lbs to 165 lbs in just 4 months thanks to Coach Jake's personalized HIIT programs. 
-                        The weekly body composition check-ins kept me accountable and motivated!"</p>
-                        <span class="testimonial-author">— Taylor M.</span>
-                    </div>
-                </div>
-                    <div class="testimonial-card">
-                        <p>"In just 6 weeks, I went from bench pressing 95 lbs to 155 lbs.
-                            The strength training guidance from ABC Fitness Studio's trainers was exactly what I needed to finally break through my plateau!"</p>
-                            <span class="testimonial-author">— Chris D.</span>
-                        </div>
-                    </div>
-                        <div class="testimonial-card">
-                            <p>"After joining ABC Fitness Studio, I lost 30 pounds in 3 months and reduced my body fat percentage from 28% to 18%.
-                                Their meal planning advice and group boot camps were game-changers!"</p>
-                                <span class="testimonial-author">— Lena R.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="testimonial-stack-container">
+        <div class="testimonial-stack">
+            <div class="testimonial-card active" data-index="0">
+                <p>"I dropped from 205 lbs to 165 lbs in just 4 months thanks to Coach Jake's personalized HIIT programs. 
+                    The weekly body composition check-ins kept me accountable and motivated!"</p>
+                <span class="testimonial-author">— Taylor M.</span>
+            </div>
+            <div class="testimonial-card" data-index="1">
+                <p>"In just 6 weeks, I went from bench pressing 95 lbs to 155 lbs.
+                    The strength training guidance from ABC Fitness Studio's trainers was exactly what I needed to finally break through my plateau!"</p>
+                <span class="testimonial-author">— Chris D.</span>
+            </div>
+            <div class="testimonial-card" data-index="2">
+                <p>"After joining ABC Fitness Studio, I lost 30 pounds in 3 months and reduced my body fat percentage from 28% to 18%.
+                    Their meal planning advice and group boot camps were game-changers!"</p>
+                <span class="testimonial-author">— Lena R.</span>
+            </div>
+        </div>
+        
+        <!-- Navigation arrows -->
+        <button class="testimonial-nav testimonial-prev">‹</button>
+        <button class="testimonial-nav testimonial-next">›</button>
+        
+        <!-- Dots indicator -->
+        <div class="testimonial-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
                 <br>
                 <br>
             <div class="random-wheel-msg" style="font-family: Ariel, sans-sarif; font-style: italic; font-size: 20px;">
