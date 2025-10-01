@@ -625,9 +625,11 @@ button:hover, .btn-lg:hover {
 }
 
 .personal-training-photo img{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   max-width: 400px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
